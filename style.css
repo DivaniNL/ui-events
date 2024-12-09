@@ -39,6 +39,16 @@ a {
 
 
 /* UI Event Classes */
+/* Change color to black white, sepia, back to black and white and back to normal */
+a:nth-of-type(1){
+  &.doSomething{
+    animation-name: sepia;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+}
+
 
 /* Jump animation on the interaction link */
 a:nth-of-type(12) {
@@ -81,3 +91,19 @@ a:nth-of-type(12) {
 
 
 /* Hieronder komen jouw animaties */
+
+
+@keyframes sepia{
+  25%{
+    background-color: #000;
+    color: #fff;
+  }
+  50%{
+    background-color: #6b482c;
+    color: #eadbcb;
+  }
+  75%{
+    background-color: #000;
+    color: #fff;
+  }
+}
