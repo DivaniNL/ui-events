@@ -48,6 +48,54 @@ a:nth-of-type(1){
     animation-iteration-count: 1;
   }
 }
+a:nth-of-type(2){
+  position: relative;
+  font-size: 0.8em;
+  width: 6em;
+  text-align: center;
+}
+a:nth-of-type(2).doSomething::after{
+  content: "";
+  position: absolute;
+  width: 93%;
+  left: 50%;
+  height: fit-content;
+  translate: -50% -50%;
+  top: 50%;
+  text-align: center;
+  background: var(--secondary);
+  animation-name: typing;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+a:nth-of-type(3){
+  position: relative;
+  font-size: 0.8em;
+  border-color: transparent;
+  color: transparent;
+  text-align: center;
+}
+a:nth-of-type(3) .mover{
+  content: "&";
+  position: absolute;
+  width: 61px;
+  left: -2px;
+  height: calc(100% + 4px);
+  display: flex;
+  top: -2px;
+  text-align: center;
+  justify-content: center;
+  background: var(--secondary);
+  color: var(--highlight-primary);
+  border: var(--line) solid var(--highlight-primary);
+  border-radius: var(--pill);
+  font-weight: normal;
+  text-decoration: none;
+  align-items: center;
+
+}
 
 
 /* Jump animation on the interaction link */
@@ -105,5 +153,41 @@ a:nth-of-type(12) {
   75%{
     background-color: #000;
     color: #fff;
+  }
+}
+
+@keyframes typing {
+  0% {
+    content: "d"
+  }
+  10% {
+    content: "do"
+  }
+  20% {
+    content: "don"
+  }
+  30% {
+    content: "don'"
+  }
+  40% {
+    content: "don't"
+  }
+  50% {
+    content: "don't "
+  }
+  60% {
+    content: "don't c"
+  }
+  70% {
+    content: "don't co"
+  }
+  80% {
+    content: "don't cop"
+  }
+  90% {
+    content: "don't copy"
+  }
+  100% {
+    content: "don't copy!"
   }
 }

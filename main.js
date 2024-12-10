@@ -36,3 +36,70 @@ zw_sepialink.addEventListener('click',zw_sepiafunctie);
 function zw_sepiafunctie(){
 zw_sepialink.classList.toggle('doSomething');
 }
+
+
+// Stap 2: querySelector
+// let bibberLink = document.querySelector...
+let typingbutton = document.querySelector("a:nth-of-type(2)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+typingbutton.addEventListener('copy',typingbuttonFunction);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function typingbuttonFunction(){
+  typingbutton.classList.toggle('doSomething');
+}
+
+
+const mover = document.querySelector('.mover');
+
+
+let introPlayed = false;
+let translateX = 0, translateY = 0;
+const introAudio = new Audio('intro.mp3');
+const chompAudio = new Audio('chomp.mp3');
+
+document.addEventListener('keydown', (event) => {
+
+    // Play the intro sound once on the first arrow key press
+    if (!introPlayed) {
+        introPlayed = true;
+        introAudio.play();
+
+        // Wait for the intro sound to finish, then start chomp
+        introAudio.addEventListener('ended', () => {
+            chompAudio.loop = true; // This enables looping
+            chompAudio.play();
+        });
+    }
+
+    // Movement logic
+    const step = 10;
+    switch (event.key) {
+        case 'ArrowUp':
+            translateY -= step;
+            break;
+        case 'ArrowDown':
+            translateY += step;
+            break;
+        case 'ArrowLeft':
+            translateX -= step;
+            break;
+        case 'ArrowRight':
+            translateX += step;
+            break;
+        default:
+            return; // Ignore non-arrow key presses
+    }
+
+    // Apply transform
+    mover.style.transform = `translate(${translateX}px, ${translateY}px)`;
+    console.log(translateX);
+    console.log(translateY);
+    // Stop chomp when back at origin
+    if (translateX == 0 && translateY == 0) {
+        console.log("yay");
+        chompAudio.loop = false;
+        chompAudio.pause();
+    }
+});
