@@ -51,6 +51,8 @@ function typingbuttonFunction(){
 }
 
 
+// button 3
+
 const mover = document.querySelector('.mover');
 
 
@@ -103,3 +105,17 @@ document.addEventListener('keydown', (event) => {
         chompAudio.pause();
     }
 });
+
+// BUTTON 4
+
+// Stap 1: querySelector
+// let bibberLink = document.querySelector...
+let sadbtn = document.querySelector("a:nth-of-type(4)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+sadbtn.addEventListener('mouseleave',makeMeSad);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function makeMeSad(){
+    sadbtn.classList.add('sad');
+}
