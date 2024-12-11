@@ -239,3 +239,19 @@ function ControlFunc (event) {
   }
 }
 
+
+// BUTTON 10 
+// Stap 2: querySelector
+// let bibberLink = document.querySelector...
+let shiftClick = document.querySelector('a:nth-of-type(9)');
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+shiftClick.addEventListener('click', ShiftFunc);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function ShiftFunc (event) {
+  if (event.shiftKey) {
+    shiftClick.classList.toggle('doSomething');
+  }
+}
+

@@ -268,3 +268,8 @@ a:nth-of-type(8){
     scale: 2;
   }
 }
+a:nth-of-type(9){
+  &.doSomething{
+    scale:0.2;
+  }
+}
