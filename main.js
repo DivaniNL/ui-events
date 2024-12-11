@@ -149,9 +149,9 @@ longpressbtn.addEventListener('mouseup',lPressEnd);
 // bibberLink.classList.toggle...
 function lPress(){
     const timer = setTimeout(function() {
-        longpressbtn.classList.add('longclass');
+        longpressbtn.classList.toggle('longclass');
         console.log(' duurt te lang');
-       }, 2000);
+       }, 2000, this);
 }
 
 longpressbtn.addEventListener('mouseup',lPressEnd);
@@ -159,4 +159,5 @@ longpressbtn.addEventListener('mouseup',lPressEnd);
 // bibberLink.classList.toggle...
 function lPressEnd(){
     longpressbtn.classList.remove('longclass');
+    clearTimeout(this.timer);
 }
