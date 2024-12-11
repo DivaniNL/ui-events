@@ -64,15 +64,18 @@ const chompAudio = new Audio('Chomp.mp3');
 document.addEventListener('keydown', (event) => {
 
     // Play the intro sound once on the first arrow key press
-    if (!introPlayed) {
-        introPlayed = true;
-        introAudio.play();
-
-        // Wait for the intro sound to finish, then start chomp
-        introAudio.addEventListener('ended', () => {
-            chompAudio.loop = true; // This enables looping
-            chompAudio.play();
-        });
+    function playAudio(){
+        if (!introPlayed) {
+            introPlayed = true;
+            introAudio.play();
+    
+            // Wait for the intro sound to finish, then start chomp
+            introAudio.addEventListener('ended', () => {
+                chompAudio.loop = true; // This enables looping
+                chompAudio.play();
+            });
+        }
+    
     }
 
     // Movement logic
@@ -80,15 +83,19 @@ document.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'ArrowUp':
             translateY -= step;
+            playAudio();
             break;
         case 'ArrowDown':
             translateY += step;
+            playAudio();
             break;
         case 'ArrowLeft':
             translateX -= step;
+            playAudio();
             break;
         case 'ArrowRight':
             translateX += step;
+            playAudio();
             break;
         default:
             return; // Ignore non-arrow key presses
@@ -160,4 +167,31 @@ longpressbtn.addEventListener('mouseup',lPressEnd);
 function lPressEnd(){
     longpressbtn.classList.remove('longclass');
     clearTimeout(this.timer);
+}
+
+
+// BUTTON 7
+
+// Stap 1: querySelector
+// let bibberLink = document.querySelector...
+let auxbtn = document.querySelector("a:nth-of-type(7)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+auxbtn.addEventListener('auxclick',auxFunction);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+
+function random(number) {
+    return Math.floor(Math.random() * number);
+}
+
+function randomColor() {
+    return `rgb(${random(255)} ${random(255)} ${random(255)})`;
+}
+
+function auxFunction(e){
+    e.preventDefault();
+    auxbtn.style.color = randomColor();
+    auxbtn.style.backgroundColor = randomColor();
+    auxbtn.style.borderColor = randomColor();
 }
