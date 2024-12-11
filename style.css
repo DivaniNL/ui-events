@@ -262,3 +262,9 @@ body:has(a:nth-of-type(18).usa_mode) .sarge{
     width: 0%;
   }
 }
+
+a:nth-of-type(8){
+  &.doSomething{
+    scale: 2;
+  }
+}

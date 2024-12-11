@@ -221,3 +221,21 @@ function usamodeFunction(){
         usabtn.classList.toggle('usa_mode');
     }, 3800, this);
 }
+
+
+// BUTTON 9 
+// Stap 2: querySelector
+// let bibberLink = document.querySelector...
+let ctrlClick = document.querySelector('a:nth-of-type(8)');
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+ctrlClick.addEventListener('click', ControlFunc);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function ControlFunc (event) {
+  if (event.ctrlKey) {
+    ctrlClick.classList.toggle('doSomething');
+    event.preventDefault();
+  }
+}
+
