@@ -103,6 +103,7 @@ document.addEventListener('keydown', (event) => {
         console.log("yay");
         chompAudio.loop = false;
         chompAudio.pause();
+        introPlayed = false;
     }
 });
 
@@ -132,4 +133,30 @@ happybtn.addEventListener('mouseenter',makeMeHappy);
 // bibberLink.classList.toggle...
 function makeMeHappy(){
     happybtn.classList.add('happy');
+}
+
+
+// BUTTON 6
+
+// Stap 1: querySelector
+// let bibberLink = document.querySelector...
+let longpressbtn = document.querySelector("a:nth-of-type(6)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+longpressbtn.addEventListener('mousedown',lPress);
+longpressbtn.addEventListener('mouseup',lPressEnd);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function lPress(){
+    setTimeout(function() {
+        longpressbtn.classList.add('longclass');
+        console.log(' duurt te lang');
+       }, 2000);
+}
+
+longpressbtn.addEventListener('mouseup',lPressEnd);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function lPressEnd(){
+    longpressbtn.classList.remove('longclass');
 }

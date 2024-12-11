@@ -214,3 +214,11 @@ a:nth-of-type(5){
     color: transparent;
   }
 }
+
+a:nth-of-type(6){
+  &.longclass{
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
+}
