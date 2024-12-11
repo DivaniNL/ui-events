@@ -119,3 +119,17 @@ sadbtn.addEventListener('mouseleave',makeMeSad);
 function makeMeSad(){
     sadbtn.classList.add('sad');
 }
+
+// BUTTON 5
+
+// Stap 1: querySelector
+// let bibberLink = document.querySelector...
+let happybtn = document.querySelector("a:nth-of-type(5)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+happybtn.addEventListener('mouseenter',makeMeHappy);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function makeMeHappy(){
+    happybtn.classList.add('happy');
+}

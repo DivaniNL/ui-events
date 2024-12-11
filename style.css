@@ -197,7 +197,17 @@ a:nth-of-type(12) {
 a:nth-of-type(4){
   &.sad{
     background-image: url('sad.jpeg');
-    background-size: contain;
+    background-size: 50px 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    color: transparent;
+  }
+}
+a:nth-of-type(5){
+  &.happy{
+    background-image: url('happy.png');
+    background-size: 35px 35px;
     background-position: center;
     background-repeat: no-repeat;
     background-color: white;
