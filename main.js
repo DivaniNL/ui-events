@@ -25,6 +25,8 @@ interaction.addEventListener('animationend', jumpHandler)
 // Ga zelf verder met de overige elementen, aan de hand van de instructies
 // Maak bijvoorbeeld een bibber animatie als je op iets klikt
 
+// button 1
+
 // Stap 1: querySelector
 // let bibberLink = document.querySelector...
 let zw_sepialink = document.querySelector("a:nth-of-type(1)");
@@ -37,6 +39,8 @@ function zw_sepiafunctie(){
 zw_sepialink.classList.toggle('doSomething');
 }
 
+
+// button 2
 
 // Stap 2: querySelector
 // let bibberLink = document.querySelector...
@@ -68,11 +72,13 @@ document.addEventListener('keydown', (event) => {
         if (!introPlayed) {
             introPlayed = true;
             introAudio.play();
-    
+            introAudio.volume = 0.1; // Ik heb manieren, Koop!
             // Wait for the intro sound to finish, then start chomp
             introAudio.addEventListener('ended', () => {
                 chompAudio.loop = true; // This enables looping
+                chompAudio.volume = 0.1; // Ik heb manieren, Koop!
                 chompAudio.play();
+                
             });
         }
     
@@ -159,6 +165,7 @@ function lPress(){
         longpressbtn.classList.toggle('longclass');
         console.log(' duurt te lang');
        }, 2000, this);
+    e.preventDefault();
 }
 
 longpressbtn.addEventListener('mouseup',lPressEnd);
@@ -190,8 +197,27 @@ function randomColor() {
 }
 
 function auxFunction(e){
-    e.preventDefault();
     auxbtn.style.color = randomColor();
     auxbtn.style.backgroundColor = randomColor();
     auxbtn.style.borderColor = randomColor();
+    e.preventDefault();
+}
+
+// BUTTON 8 (STATES)
+const usaAudio = new Audio('wtf-is-a-kilometer-long.mp3');
+// Stap 2: querySelector
+// let bibberLink = document.querySelector...
+let usabtn = document.querySelector("a:nth-of-type(18)");
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+usabtn.addEventListener('dblclick',usamodeFunction);
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// bibberLink.classList.toggle...
+function usamodeFunction(){
+    usabtn.classList.toggle('usa_mode');
+    usaAudio.play();
+    usaAudio.volume = 0.3; // Ik heb manieren, Koop!
+    const timer = setTimeout(function() {
+        usabtn.classList.toggle('usa_mode');
+    }, 3800, this);
 }

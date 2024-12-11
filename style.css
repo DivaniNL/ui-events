@@ -222,3 +222,43 @@ a:nth-of-type(6){
     color: white;
   }
 }
+a:nth-of-type(18){
+  &.usa_mode{
+    background-image: url('./usa.png');
+    background-size: cover;
+    color: #fff;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    z-index: 999;
+    position: relative;
+  }
+}
+.sarge{
+  position: absolute;
+  inset: 50%;
+  translate: -50% -50%;
+  width: 0%;
+}
+body:has(a:nth-of-type(18).usa_mode) .sarge{
+  animation-name: great_again;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3.8s;
+  animation-iteration-count: 1;
+}
+
+@keyframes great_again{
+  25%{
+    width: 50%;
+  }
+  50%{
+    width:150%;
+  }
+  75%{
+    width: 280%;
+  }
+  90%{
+    width: 400%;
+  }
+  100%{
+    width: 0%;
+  }
+}
