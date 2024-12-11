@@ -148,7 +148,7 @@ longpressbtn.addEventListener('mouseup',lPressEnd);
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
 function lPress(){
-    setTimeout(function() {
+    const timer = setTimeout(function() {
         longpressbtn.classList.add('longclass');
         console.log(' duurt te lang');
        }, 2000);
