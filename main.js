@@ -57,7 +57,7 @@ const mover = document.querySelector('.mover');
 let introPlayed = false;
 let translateX = 0, translateY = 0;
 const introAudio = new Audio('Intro.mp3');
-const chompAudio = new Audio('homp.mp3');
+const chompAudio = new Audio('Chomp.mp3');
 
 document.addEventListener('keydown', (event) => {
 
