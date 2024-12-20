@@ -252,6 +252,7 @@ shiftClick.addEventListener('click', ShiftFunc);
 function ShiftFunc (event) {
   if (event.shiftKey) {
     shiftClick.classList.toggle('doSomething');
+    event.preventDefault();
   }
 }
 
