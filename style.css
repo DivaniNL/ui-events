@@ -273,3 +273,9 @@ a:nth-of-type(9){
     scale:0.2;
   }
 }
+
+
+article {
+  color: white;
+  font-size: medium;
+}
